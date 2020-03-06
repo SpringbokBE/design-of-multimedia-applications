@@ -37,6 +37,7 @@ Assignment 1 // Contains scripts involving assignment 1.
 Assignment 2 // Contains scripts involving assignment 2.
 ```
 
-## Author
+## Authors
 
 * **Gerbrand De Laender** (gerbrand.delaender@ugent.be)
+* **Damon Verbeyst** (damon.verbeyst@ugent.be)
