@@ -149,16 +149,18 @@ class VideoMixer():
         self.video_window = Gtk.DrawingArea.new()
         
         label_1 = Gtk.Label.new("Alpha 1")
-        slider_1 = Gtk.Scale.new_with_range(Gtk.Orientation.HORIZONTAL, 0, 100, 1)
-        slider_1.set_draw_value(False)
-        # self.slider_update_signal_id = self.slider.connect(
-        #     "value-changed", self.on_slider_changed)
-            
+        adj_1 = Gtk.Adjustment.new(50, 0, 100, 0, 0, 0)
+        self.slider_1 = Gtk.Scale.new(Gtk.Orientation.HORIZONTAL, None)
+        self.slider_1.set_adjustment(adj_1)
+        self.slider_1.set_draw_value(False)
+        self.slider_1.connect("value-changed", self.on_slider_changed)
+        
         label_2 = Gtk.Label.new("Alpha 2")
-        slider_2 = Gtk.Scale.new_with_range(Gtk.Orientation.HORIZONTAL, 0, 100, 1)
-        slider_2.set_draw_value(False)
-        # self.slider_update_signal_id = self.slider.connect(
-        #     "value-changed", self.on_slider_changed)
+        adj_2 = Gtk.Adjustment.new(50, 0, 100, 0, 0, 0)
+        self.slider_2 = Gtk.Scale.new(Gtk.Orientation.HORIZONTAL, None)
+        self.slider_2.set_adjustment(adj_2)
+        self.slider_2.set_draw_value(False)
+        self.slider_2.connect("value-changed", self.on_slider_changed)
         
         box_0 = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 0)
         box_1 = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
@@ -169,10 +171,10 @@ class VideoMixer():
         box_0.pack_start(box_2, False, True, 0)
         
         box_1.pack_start(label_1, False, True, 10)
-        box_1.pack_start(slider_1, True, True, 10)
+        box_1.pack_start(self.slider_1, True, True, 10)
         
         box_2.pack_start(label_2, False, True, 10)
-        box_2.pack_start(slider_2, True, True, 10)
+        box_2.pack_start(self.slider_2, True, True, 10)
         
         self.main_window.add(box_0)
         self.main_window.set_default_size(640, 480)
@@ -228,6 +230,15 @@ class VideoMixer():
             
     ############################################################################
     
+    def on_slider_changed(self, range):
+        """
+        Update the opacity whenever the slider has changed.
+        """
+        self.pad_0.set_property("alpha", self.slider_1.get_value() / 100)
+        self.pad_1.set_property("alpha", self.slider_2.get_value() / 100)
+        
+    ############################################################################
+    
     def on_message(self, bus, msg):
         """
         Handle messages that become published on bus_0.
@@ -258,9 +269,9 @@ class VideoMixer():
         """
         if msg.get_structure().get_name() == "prepare-window-handle":
             msg.src.set_window_handle(self.video_window.get_window().get_xid())
-                    
-################################################################################
+            
 ################################################################################
 
+################################################################################
 if __name__ == "__main__":
     vm = VideoMixer()
