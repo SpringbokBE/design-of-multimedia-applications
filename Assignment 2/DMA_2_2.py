@@ -177,7 +177,7 @@ class VideoMixer():
         box_2.pack_start(self.slider_2, True, True, 10)
         
         self.main_window.add(box_0)
-        self.main_window.set_default_size(640, 480)
+        self.main_window.set_default_size(800, 600)
         self.main_window.show_all()
     
     ############################################################################
