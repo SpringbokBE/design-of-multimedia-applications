@@ -79,7 +79,7 @@ class VideoMixer():
         if None in (self.src_0, self.src_1, self.scl_0, self.scl_1, self.mix_0,
                     self.pix_0, self.tee_0, self.que_0, self.que_1, self.vco_0, 
                     self.vco_1, self.enc_0, self.mux_0, self.snk_0, self.snk_1,
-                    self.pip_0, *self.effects):
+                    self.pip_0) + tuple(self.effects):
             print("ERROR : Unable to create all elements!")
             sys.exit(1)
         
@@ -93,7 +93,7 @@ class VideoMixer():
         for element in (self.src_0, self.src_1, self.scl_0, self.scl_1,
                        self.mix_0, self.pix_0, self.tee_0, self.que_0, 
                        self.que_1, self.vco_0, self.vco_1, self.enc_0,
-                       self.mux_0, self.snk_0, self.snk_1, *self.effects):
+                       self.mux_0, self.snk_0, self.snk_1) + tuple(self.effects):
            self.pip_0.add(element)
                        
         # Regular linking.
