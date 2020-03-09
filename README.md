@@ -23,6 +23,12 @@ Write a python GUI application in which two video’s are visualized and mixed. 
   
 Files: `DMA_2_2.py`
 
+## Assignment 2.3
+
+Add some buttons on the GUI such that different effects can be applied to the resulting video (at least 2). One of the effects should be able to put your channel’s logo in the upper left corner of the video. Take care the user interface is convincing as a proof of concept towards the outside "non-engineering" world.
+
+Files `DMA_2_3.py`, `logo.png`
+
 ## Requirements
 
 The application is tested on Kubuntu 19.04 using:
