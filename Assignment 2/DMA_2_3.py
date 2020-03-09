@@ -151,7 +151,7 @@ class VideoMixer():
         self.pix_0.set_property("offset-x", 20)
         self.pix_0.set_property("offset-y", 20)
         self.enc_0.set_property("tune", "zerolatency")
-        self.snk_1.set_property("location", "mixed.mkv")
+        self.snk_1.set_property("location", "DMA_2_3.mkv")
         
         for eff in self.effects:
             eff.set_passthrough(True)

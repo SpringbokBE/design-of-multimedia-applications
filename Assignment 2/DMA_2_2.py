@@ -129,7 +129,7 @@ class VideoMixer():
         self.pad_0.set_property("alpha", 0.5)
         self.pad_1.set_property("alpha", 0.5)
         self.enc_0.set_property("tune", "zerolatency")
-        self.snk_1.set_property("location", "mixed.mkv")
+        self.snk_1.set_property("location", "DMA_2_2.mkv")
         
         self.bus_0.add_signal_watch()
         self.bus_0.enable_sync_message_emission()
