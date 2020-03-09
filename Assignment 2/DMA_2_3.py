@@ -68,7 +68,7 @@ class VideoMixer():
         self.vco_1 = Gst.ElementFactory.make("videoconvert", "vco_1")
         self.enc_0 = Gst.ElementFactory.make("x264enc", "enc_0")
         self.mux_0 = Gst.ElementFactory.make("matroskamux", "mux_0")
-        self.snk_0 = Gst.ElementFactory.make("xvimagesink", "snk_0")
+        self.snk_0 = Gst.ElementFactory.make("glimagesink", "snk_0")
         self.snk_1 = Gst.ElementFactory.make("filesink", "snk_1")
         self.pip_0 = Gst.Pipeline.new("pip_0")
         self.bus_0 = self.pip_0.get_bus()
