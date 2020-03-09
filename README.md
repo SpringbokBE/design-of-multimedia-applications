@@ -6,6 +6,31 @@ The assignments cover applications that make use of the open source [Gstreamer m
 
 ## Assignment 1
 
+### Assignment 1.1
+Provide a command line for playback of the following video files, without using autopluggers like the playbin, playsink, decodebin, and uridecodebin elements.
+  
+Video 1: http://users.datasciencelab.ugent.be/MM/sintel-1024-surround.mp4  
+Video 2: http://users.datasciencelab.ugent.be/MM/tears_of_steel_720p.mp4  
+  
+To not overload the network, you can test the decoding and playback using the local file in the Downloads folder of the virtual machine.
+  
+Files: `DMA_1_1.sh`
+
+### Assignment 1.2
+Extend the previous pipeline such that the autovideosink and autoaudiosink autoplugger can be replaced as well.
+  
+Files: `DMA_1_2.sh`
+
+### Assignment 1.3
+Provide for each video a command line to decode them, downscale height and width by a factor 2 (keep the aspect ratio), and encode them without changing the type of container (mp4) and codec. The audio stream needs to remain untouched (stream copy instead of decode encode).
+  
+Files: `DMA_1_3.sh`
+
+### Assignment 1.4
+Provide for each video a playout pipeline using autopluggers and put a logo in the upper left corner of the video. Find a decent logo and choose the size appropriately.
+  
+Files: `DMA_1_4.sh`
+
 ## Assignment 2
 
 ### Assignment 2.1
