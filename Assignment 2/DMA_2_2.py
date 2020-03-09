@@ -116,8 +116,8 @@ class VideoMixer():
     
     def configure_pipeline(self):
         """
-        Configure all GStreamer elements. The input and output files can be
-        altered here.
+        Configure all GStreamer elements. The input and output file locations
+        can be altered from here.
         """
         URI_0 = "file:///home/dma/Downloads/sintel_SD.mp4"
         URI_1 = "file:///home/dma/Downloads/sita_SD.mp4"
