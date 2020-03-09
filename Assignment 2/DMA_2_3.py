@@ -39,13 +39,13 @@ class VideoMixer():
         "circle" : "Warps the picture into an arc shaped form.",
         "diffuse" : "Diffuses the image by moving its pixels in random directions.",
         "fisheye" : "Simulate a fisheye lens by zooming on the center of the image and compressing the edges.",
-        "kaleidoscope" : "Applies ’kaleidoscope’ geometric transform to the image.",
+        "kaleidoscope" : "Applies 'kaleidoscope' geometric transform to the image.",
         "marble" : "Applies a marbling effect to the image.",
         "mirror" : "Split the image into two halves and reflect one over each other.",
         "perspective" : "Apply a 2D perspective transform.",
-        "pinch" : "Applies ’pinch’ geometric transform to the image.",
+        "pinch" : "Applies 'pinch' geometric transform to the image.",
         "rotate" : "Rotates the picture by an arbitrary angle.",
-        "sphere" : "Applies ’sphere’ geometric transform to the image.",
+        "sphere" : "Applies 'sphere' geometric transform to the image.",
         "square" : "Distort center part of the image into a square.",
         "stretch" : "Stretch the image in a circle around the center point.",
         "tunnel" : "Light tunnel effect.",
@@ -66,9 +66,9 @@ class VideoMixer():
         "shagadelictv" : "Oh behave, ShagedelicTV makes images shagadelic.",
         "streaktv" : "StreakTV makes after images of moving objects.",
         "agingtv" : "AgingTV adds age to video input using scratches and dust.",
-        "dicetv" : "’Dices’ the screen up into many small squares.",
+        "dicetv" : "'Dices' the screen up into many small squares.",
         "vertigotv" : "A loopback alpha blending effector with rotating and scaling.",
-        "warptv" : "WarpTV does realtime goo’ing of the video input." }
+        "warptv" : "WarpTV does realtime goo'ing of the video input." }
     
     ############################################################################
     
