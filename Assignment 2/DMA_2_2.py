@@ -75,10 +75,11 @@ class VideoMixer():
         Link all GStreamer elements. The source elements are not yet linked and
         will be linked dynamically.
         """
-        self.pip_0.add(self.src_0, self.src_1, self.scl_0, self.scl_1,
+        for element in (self.src_0, self.src_1, self.scl_0, self.scl_1,
                        self.mix_0, self.tee_0, self.que_0, self.que_1,
                        self.vco_0, self.vco_1, self.enc_0, self.mux_0,
-                       self.snk_0, self.snk_1)
+                       self.snk_0, self.snk_1):
+           self.pip_0.add(element)
                        
         # Regular linking.
         ret = self.mix_0.link(self.tee_0)
@@ -224,9 +225,9 @@ class VideoMixer():
             
         if sink_pad and not sink_pad.is_linked():
             if new_pad.link(sink_pad) == Gst.PadLinkReturn.OK:
-                print(f"INFO : Succesfully linked '{new_pad_name}'!")
+                print("INFO : Succesfully linked '{}'!".format(new_pad_name))
             else:
-                print(f"ERROR : Failed to link '{new_pad_name}'!")
+                print("ERROR : Failed to link '{}'!".format(new_pad_name))
             
     ############################################################################
     
@@ -250,14 +251,14 @@ class VideoMixer():
                 old_state, new_state, _ = msg.parse_state_changed()
                 old = Gst.Element.state_get_name(old_state)
                 new = Gst.Element.state_get_name(new_state)
-                print(f"INFO : Pipeline changed from {old} to {new}!")    
+                print("INFO : Pipeline changed from {} to {}!".format(old, new))    
         elif msg.type == Gst.MessageType.EOS:
             eos = True
             print("INFO : End of stream reached!")
         elif msg.type == Gst.MessageType.ERROR:
             err, dbg = msg.parse_error()
-            print(f"ERROR : {msg.src.get_name()} {err.message}!")
-            print(f"DEBUG INFO: {dbg}")
+            print("ERROR : {} {}!".format(msg.src.get_name(), err.message))
+            print("DEBUG INFO: {}".format(dbg))
             
     ############################################################################
     
