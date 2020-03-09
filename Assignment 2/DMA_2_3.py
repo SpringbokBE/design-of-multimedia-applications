@@ -110,13 +110,8 @@ class VideoMixer():
         self.pip_0 = Gst.Pipeline.new("pip_0")
         self.bus_0 = self.pip_0.get_bus()
         
-<<<<<<< HEAD
-        self.effects = [Gst.ElementFactory.make(name, "eff_{}".format(i))
-        for i, name in enumerate(self.EFFECT_NAMES)]
-=======
         self.effects = [Gst.ElementFactory.make(name, f"eff_{i}")
                         for i, name in enumerate(self.EFFECT_NAMES)]
->>>>>>> b9d4881... Added tooltips.
         
         if None in (self.src_0, self.src_1, self.scl_0, self.scl_1, self.mix_0,
                     self.pix_0, self.tee_0, self.que_0, self.que_1, self.vco_0, 
