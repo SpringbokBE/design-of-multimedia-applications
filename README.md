@@ -57,7 +57,7 @@ Files `DMA_2_3.py`, `logo.png`
 
 ## Assignment 3
 
-Four functional blocks of a block-based video codec will be implemented: transformation, quantisation, intra-prediction and motion estimation. The full assignment can be found ![here](Assignment 3/data/Assignment.pdf).
+Four functional blocks of a block-based video codec will be implemented: transformation, quantisation, intra-prediction and motion estimation. The full assignment can be found ![here](Assignment\ 3/data/Assignment.pdf).
 
 ## Requirements
 
