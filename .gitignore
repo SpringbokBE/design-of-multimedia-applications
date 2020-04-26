@@ -1,1 +1,4 @@
 *.mkv
+Assignment 3/build/
+Assignment 3/data/*.enc
+Assignment 3/data/*.out
