@@ -63,7 +63,7 @@ int Encoder::Encode(char *inputfile, int width, int height, int qp, int i_interv
 
 	EntropyCoder entropy_coder(&out);
 	DCTTransform dct;
-	MotionCompensator mc(SEARCH_WIDTH, SEARCH_HEIGHT, cost);
+	MotionCompensator mc(SEARCH_WIDTH, SEARCH_HEIGHT);
 	IntraPredictor ip;
 	
 	printf("File:\t%s\nWidth:\t%d\nHeight:\t%d\nQP:\t%d\nI-interval:\t%d\nSearch window: \t%dx%d\n\n", inputfile, width, height, qp, i_interval, SEARCH_WIDTH, SEARCH_HEIGHT);
