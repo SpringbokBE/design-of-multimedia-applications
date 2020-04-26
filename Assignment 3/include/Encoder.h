@@ -14,7 +14,7 @@
 class Encoder
 {
 public:
-	int Encode(char *inputfile, int width, int height, int qp, int i_interval, char *outputfile, int cost);
+	int Encode(char *inputfile, int width, int height, int qp, int i_interval, char *outputfile);
 private:
 	std::ofstream results;
 };

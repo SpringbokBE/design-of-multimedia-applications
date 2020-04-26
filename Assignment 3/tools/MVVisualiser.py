@@ -29,7 +29,7 @@ def update_frame(n):
 
 ################################################################################
 
-directory = "C:\\Users\\gerbr\\Code\\VideoCodec\\data\\foreman_50\\"
+directory = "xxx\\data\\foreman_50\\"
 n_frames, i_interval = 50, 2
 x_dim, y_dim, dim = 22, 18, 22 * 18
 

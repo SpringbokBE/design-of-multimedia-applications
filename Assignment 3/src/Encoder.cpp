@@ -56,9 +56,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-int Encoder::Encode(char *inputfile, int width, int height, int qp, int i_interval, char *outputfile, int cost)
+int Encoder::Encode(char *inputfile, int width, int height, int qp, int i_interval, char *outputfile)
 {
-	results.open(RES_NAME, std::ofstream::app);
 	YUVFileInput in(inputfile, width/16, height/16);
 	BitFileOutput out(outputfile);
 
@@ -162,8 +161,6 @@ int Encoder::Encode(char *inputfile, int width, int height, int qp, int i_interv
 	delete mc.getReferenceFrame();
 
 	printf("\nTotal: %8ld\n", entropy_coder.getTotalUsedBits());
-	results << cost << ", " << entropy_coder.getTotalUsedBits() << "\n";
-	results.close();
 
 	return 0;
 }
@@ -174,20 +171,14 @@ int main(int argc, char* argv[])
 {
 	Encoder enc;
 
-	//if (argc != 7)
-	//{
-	//	printf("\nUSAGE:   %s <inputfile> <input_width> <input_height> <qp> <I-interval> <outputfile>\n", argv[0]);
-	//	printf("            <input_width> and <input_height> are expressed in pixels\n");
-	//	return 1;
-	//}
-	//
-	//enc.Encode(argv[1], atoi(argv[2]), atoi(argv[3]),atoi(argv[4]),atoi(argv[5]),argv[6]);
-	for (int i = 1; i < 10; i++) {
-		for(int qp = 2; qp < 52; qp += 2){
-			enc.Encode("../data/foreman_50.yuv", 352, 288, qp, i, "../data/foreman_50.enc", 10000);
-		}
+	if (argc != 7)
+	{
+		printf("\nUSAGE:   %s <inputfile> <input_width> <input_height> <qp> <I-interval> <outputfile>\n", argv[0]);
+		printf("            <input_width> and <input_height> are expressed in pixels\n");
+		return 1;
 	}
-	//enc.Encode("../data/foreman_50.yuv", 352, 288, 40, 5, "../data/foreman_50.enc", 0);
+	
+	enc.Encode(argv[1], atoi(argv[2]), atoi(argv[3]),atoi(argv[4]),atoi(argv[5]),argv[6]);
 
 	return 0;
 }

@@ -14,7 +14,7 @@
 class MotionCompensator
 {
 public:
-	MotionCompensator(int search_width, int search_height, int cost);
+	MotionCompensator(int search_width, int search_height);
 	~MotionCompensator();
 
 	void setReferenceFrame(Frame* frame);
@@ -34,7 +34,6 @@ protected:
 	Plane search_buffer;
 
 private:
-	int cost;
 	std::ofstream out;
 	const static int _i[], _j[], _i_max[], _j_max[];
 	

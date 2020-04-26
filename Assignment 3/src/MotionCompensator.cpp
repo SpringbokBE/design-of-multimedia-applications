@@ -14,7 +14,7 @@
  *	In this step, macroblocks of an I-frame are matched against parts of the reference P-frame.
  *	A suboptimal match is found using a fast search algorithm, which aims at reducing the intensive
  *	process of exhaustively searching the P-frame for the best match. The best match is
- *  characterised by the lowest Sum of Squared Errors (SSE). The vectors indicating the relative
+ *	characterised by the lowest Sum of Squared Errors (SSE). The vectors indicating the relative
  *	position of the best match are called the motion vectors. Instead of encoding the full block,
  *	now only the motion vector and the residual signal have to be encoded, yielding better
  *	compression rates.
@@ -55,8 +55,8 @@ const int MotionCompensator::_j_max[5] = {8, 8, 16, 16, 16};
 //	search_width and search_height.
 //
 
-MotionCompensator::MotionCompensator(int search_width, int search_height, int cost)
-	: search_width(search_width), search_height(search_height), reference_frame(0), ref_height(0), ref_width(0), cost(cost)
+MotionCompensator::MotionCompensator(int search_width, int search_height)
+	: search_width(search_width), search_height(search_height), reference_frame(0), ref_height(0), ref_width(0)
 {
 	search_width += 16;
 	search_height += 16;
@@ -131,8 +131,9 @@ void MotionCompensator::motionCompensate(Macroblock* mb)
 	long min_sse = fastSearch16x16(mb);
 	int temp_x = mb->mv[0].x, temp_y = mb->mv[0].y;
 	long sum_min_sse = fastSearch8x8(mb);
-
-	if (sum_min_sse + cost < min_sse) {
+	
+	// Cost is determined empirically.
+	if (sum_min_sse + 10000 < min_sse) {
 		mb->partitions = true;
 	}
 	else {
