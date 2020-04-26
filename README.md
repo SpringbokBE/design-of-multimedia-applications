@@ -135,6 +135,10 @@ The partitioning cost factor is determined empirically and varies between the da
 <img src = "Assignment 3/data/screens/CostFootball.png" width = "290px" alt = "Compressed size vs. Cost factor, football_50.yuv">
 <img src = "Assignment 3/data/screens/CostForeman.png" width = "290px" alt = "Compressed size vs. Cost factor, foreman_50.yuv">
 </p>
+Screenshot of output of the motion vector visualisation script.
+<p style = "float:left;">
+<img src = "Assignment 3/data/screens/MVVisualiser.png" width = "580px" alt = "Motion vector visualisation">
+</p>
 
 ## Authors
 
